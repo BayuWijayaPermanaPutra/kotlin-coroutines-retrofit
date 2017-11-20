@@ -57,18 +57,18 @@ public interface ErrorResult {
 /**
  * Returns [Result.Ok.value] or `null`
  */
-public fun <T : Any> Result<T>.getOrNull(): T? =
-        if (this is Result.Ok) this.value else null
+@Suppress("IfThenToSafeAccess")
+public fun <T : Any> Result<T>.getOrNull(): T? = if (this is Result.Ok) this.value else null
 
 /**
  * Returns [Result.Ok.value] or [default]
  */
-public fun <T : Any> Result<T>.getOrDefault(default: T): T =
-        getOrNull() ?: default
+public fun <T : Any> Result<T>.getOrDefault(default: T): T = getOrNull() ?: default
 
 /**
  * Returns [Result.Ok.value] or throw [throwable] or [ErrorResult.exception]
  */
+@Suppress("UseExpressionBody")
 public fun <T : Any> Result<T>.getOrThrow(throwable: Throwable? = null): T {
     return when (this) {
         is Result.Ok -> value

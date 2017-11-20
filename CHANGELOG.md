@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version 0.8.3 (2017-11-20)
+
+- [kotlinx.coroutines 0.19.3](https://github.com/Kotlin/kotlinx.coroutines/releases/tag/0.19.3)
+- KDoc published to javadoc jar
+
 ## Version 0.8.2 (2017-10-04)
 
 - Fixed Kotlin stdlib dependency version in pom.xml

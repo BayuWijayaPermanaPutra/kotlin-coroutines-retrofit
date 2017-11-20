@@ -1,1 +1,15 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "org.jetbrains.dokka") {
+                useModule("org.jetbrains.dokka:dokka-gradle-plugin:${requested.version}")
+            }
+        }
+    }
+}
+
+
 rootProject.name = 'kotlin-coroutines-retrofit'
